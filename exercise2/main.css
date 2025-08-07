@@ -71,7 +71,7 @@ img{
     height: 10em;
     border-radius: 50%;
     box-shadow: 0 0 3em rgb(255, 128, 0);
-    /* animation: orbit 50s linear infinite; */
+    animation: orbit 50s linear infinite;
 }
 .mercury,
 .venus,
