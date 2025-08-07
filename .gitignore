@@ -1,0 +1,12 @@
+
+# Visual Studio Code 設定檔
+.vscode/
+
+# Node.js 的依賴模組
+node_modules/
+
+ # 編譯或建置的結果目錄
+build/
+
+# 發布版程式碼的目錄
+dist/

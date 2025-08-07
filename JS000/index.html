@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<!-- 這是 HTML 註解 -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>第一個 HTML, CSS, JavaScript 程式</title>
+	<!-- 引入外部的 css 樣式設定檔 -->
+	<link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+	<h1>這是第一個 HTML, CSS, JavaScript 示範程式</h1>
+
+	<div class="container">
+		<div class="box">
+			<div class="row">
+				<label for="tname" class="f-label">請輸入稱呼：</label>
+				<input type="text" class="f-control" id="tname" placeholder="稱呼">
+			</div>
+			<div class="row">
+				<button class="btn" onclick="sayHello1()">按我 1</button>
+				<button class="btn" onclick="sayHello2()">按我 (輸入文字)</button>
+			</div>
+			<div class="row">
+				<pre class="msg" id="msg" style="height: 50px;"></pre>
+			</div>
+		</div>
+	</div>
+
+	<!-- 引入外部的 Javascript 程式碼檔 -->
+	<script src="main.js"></script>
+
+	<!-- 內部嵌入的 Javascript 程式碼 -->
+	<script> 
+		function sayHello2() {
+			let tname = document.getElementById("tname").value;
+			showMsg(`Hello ${tname} ${++cnt}`);
+		}
+	</script>
+</body>
+
+</html>

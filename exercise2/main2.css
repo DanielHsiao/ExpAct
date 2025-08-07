@@ -1,0 +1,102 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	overflow: hidden;
+}
+
+header {
+	color: #2c3e50;
+	text-align: center;
+	margin: 0px auto 20px;
+	height: 120px;
+	position: fixed;
+	top: 0px;
+}
+
+header>h1 {
+	margin-bottom: 20px;
+	padding: .2em 0 .5em;
+}
+
+header>p {
+	margin-bottom: 10px;
+}
+
+footer {
+	padding: 20px 0;
+	color: #ffffff;
+	position: fixed;
+	bottom: 0px;
+	display: flex;
+	width: 100%;
+	opacity: 0.3;
+	z-index: 20;
+}
+footer > .left {
+	max-width: fit-content;
+	margin-left: 16px;
+}
+footer > .center {
+	max-width: fit-content;
+	margin-inline: auto;
+}
+footer > .right {
+	max-width: fit-content;
+	margin-right: 16px;
+}
+
+.container {
+	font-size: 6px;
+	width: 40em;
+	height: 40em;
+	position: relative;
+}
+
+img {
+	height: 130%;
+	width: 130%;
+}
+
+.img {
+	position: absolute;
+	border-radius: 50%;
+	animation: orbit 30s linear infinite;
+	top: 3em;
+	right: 0em;
+	width: 5em;
+	height: 5em;
+	background-image: url('./img/3.地球.png');
+	background-size: cover;
+}
+
+.sun {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 15em;
+	left: 15em;
+	width: 10em;
+	height: 10em;
+	border-radius: 50%;
+	box-shadow: 0 0 3em rgb(255, 128, 0);
+	animation: orbit 50s linear infinite;
+}
+
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@keyframes orbit {
+	to {
+		transform: rotate(360deg);
+	}
+}

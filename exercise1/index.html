@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+	<title>圖片變換</title>
+</head>
+
+<body>
+	<header>
+		<h1>圖片變換</h1>
+		<p>此網頁可以顯示圖片，並且切換圖片是否顯示，以及可以變更圖片底色。這個範例可以體驗 HTML 搭配 CSS 以及 Javascript 的功能多樣性。</p>
+	</header>
+
+	<main class="main">
+		<div class="row inCenter">
+			<div class="title">切換圖片顯示與底色</div>
+		</div>
+		<div class="func row inCenter">
+			<div>
+				<div class="f-group">
+					<input type="checkbox" class="f-control" id="cbImg1" checked>
+					<label for="cbImg1">香蕉</label>
+				</div>
+				<div class="f-group">
+					<label for="tCol1">顏色</label>
+					<input type="color" class="f-control" id="tCol1" value="#c4d1e2">
+				</div>
+			</div>
+			<div>
+				<div class="f-group">
+					<input type="checkbox" class="f-control" id="cbImg2" checked>
+					<label for="cbImg2">蘋果</label>
+				</div>
+				<div class="f-group">
+					<label for="tCol2">顏色</label>
+					<input type="color" class="f-control" id="tCol2" value="#c4d1e2">
+				</div>
+			</div>
+			<div>
+				<div class="f-group">
+					<input type="checkbox" class="f-control" id="cbImg3" checked>
+					<label for="cbImg3">橘子</label>
+				</div>
+				<div class="f-group">
+					<label for="tCol3">顏色</label>
+					<input type="color" class="f-control" id="tCol3" value="#c4d1e2">
+				</div>
+			</div>
+			<div>
+				<div class="f-group">
+					<input type="checkbox" class="f-control" id="cbImg4" checked>
+					<label for="cbImg4">芭樂</label>
+				</div>
+				<div class="f-group">
+					<label for="tCol4">顏色</label>
+					<input type="color" class="f-control" id="tCol4" value="#c4d1e2">
+				</div>
+			</div>
+		</div>
+
+		<div class="pics row inCenter">
+			<div class="pic"><img class="img" id="img1" src="img/1.香蕉.png" alt="香蕉"></div>
+			<div class="pic"><img class="img" id="img2" src="img/2.蘋果.png" alt="蘋果"></div>
+			<div class="pic"><img class="img" id="img3" src="img/3.橘子.png" alt="橘子"></div>
+			<div class="pic"><img class="img" id="img4" src="img/4.芭樂.png" alt="芭樂"></div>
+		</div>
+	</main>
+
+	<footer>
+		<span class="left">互動式網頁程式設計</span>
+		<span class="center">圖片變換</span>
+		<span class="right">丹尼爾資訊 Daniel</span>
+	</footer>
+
+	<script src="main.js"></script>
+</body>
+
+</html>

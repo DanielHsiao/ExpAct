@@ -1,0 +1,24 @@
+.table {
+	width: 100%;
+	border-color: black;
+	border-style: solid;
+	border: 1px;
+}
+
+.table tr {
+	border-bottom: 1px solid #4f4fa7;
+	height: 40px;
+}
+
+.table>thead>tr {
+	border-bottom: 2px solid blue;
+}
+
+.table th {
+	text-align: left;
+	padding: 2px 1em 5px 1em;
+}
+
+.table td {
+	padding: 2px 1em 5px 1em;
+}

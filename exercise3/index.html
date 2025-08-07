@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MyApp</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1>My Appilcation</h1>
+
+	<div class="container" id="app">
+		<div class="box" style="width: 800px;">
+			<div class="row">
+				<div class="context">學生清單</div>
+			</div>
+			<div class="row">
+				<table class="table">
+					<thead>
+						<th>ID</th>
+						<th>姓名</th>
+						<th>年紀</th>
+						<th>等級</th>
+						<th>分數</th>
+						<th>
+							<button class="btn btn-green" @click="addData">新增</button>
+						</th>
+					</thead>
+					<tbody>
+						<tr v-for="item in students">
+							<td>{{ item.id }}</td>
+							<td>{{ item.name }}</td>
+							<td>{{ item.age }}</td>
+							<td>{{ item.level }}</td>
+							<td>{{ item.score }}</td>
+							<td>
+								<button class="btn" @click="detData(item.id)">詳細</button>
+								<button class="btn btn-yellow" @click="editData(item.id)">修改</button>
+								<button class="btn btn-red" @click="delData(item.id)">刪除</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<dialog class="dialog">
+			<div class="dialog-content">
+				<div class="row">
+					<div class="context">
+						{{statusStr[status]}}資料
+					</div>
+				</div>
+				<div class="row" v-if="status != 1">
+					<label for="id" class="f-label">ID</label>
+					<input type="number" class="f-control" id="id" v-model="student.id" :readonly="status == 2 || status == 3 || status == 4">
+				</div>
+				<div class="row">
+					<label for="name" class="f-label">姓名</label>
+					<input type="text" class="f-control" id="name" v-model="student.name" :readonly="status == 3 || status == 4">
+				</div>
+				<div class="row">
+					<label for="age" class="f-label">年紀</label>
+					<input type="number" class="f-control" id="age" v-model="student.age" :readonly="status == 3 || status == 4">
+				</div>
+				<div class="row">
+					<label for="level" class="f-label">等級</label>
+					<select class="f-control" id="level" v-model="student.level" :disabled="status == 3 || status == 4">
+						<option selected>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+				</div>
+				<div class="row">
+					<label for="score" class="f-label">分數</label>
+					<input type="number" class="f-control" id="score" v-model="student.score" :readonly="status == 3 || status == 4">
+				</div>
+				<div class="row">
+					<button class="btn" :class="statusClass[status]" @click="confirmDialog">確認{{(status == 3 ? '' : statusStr[status])}}</button>
+					<button class="btn btn-light" @click="closeDialog" v-if="status != 0 && status != 3">取消</button>
+				</div>
+			</div>
+		</dialog>
+	</div>
+
+	<script src="https://unpkg.com/vue@3/dist/vue.esm-browser.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>
